@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&display=swap');
+.notFound {
+    font-family: 'Bodoni Moda', serif;
+    background-color: black;
+}
+h1 {
+    margin: 0;
+    color: white;
+}
+.notFound img {
+    height: 575px;
+    width: auto;
+}

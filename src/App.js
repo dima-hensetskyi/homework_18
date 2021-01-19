@@ -1,25 +1,51 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Main from './Components/Main/Main';
+import Posts from './Components/Post/Posts';
+import Photo from './Components/Photos/Photo';
+import NotFound from './Components/NotFound/NotFound';
+import Contacts, { contactsList } from './Components/Contacts/Contacts';
+import ContactDescription from './Components/Contacts/ContactDescription';
+import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-router-dom';
+
+const selectedContact = (props) => {
+    const single = contactsList.find((contact) => contact.lastName === props.match.params.lastName);
+    return (
+        <div className="contactDescription">
+            <ContactDescription {...single}></ContactDescription>
+        </div>
+    );
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router>
+                <header className="App-header">
+                    <NavLink to="/main" className="app-link" activeClassName="active-link">
+                        Main
+                    </NavLink>
+                    <NavLink to="/posts" className="app-link" activeClassName="active-link">
+                        Post
+                    </NavLink>
+                    <NavLink to="/photo" className="app-link" activeClassName="active-link">
+                        Photo
+                    </NavLink>
+                    <NavLink to="/contacts" className="app-link" activeClassName="active-link">
+                        Contacts
+                    </NavLink>
+                </header>
+                <Switch>
+                    <Route path="/main" component={Main} />
+                    <Route path="/posts" component={Posts} />
+                    <Route path="/photo" component={Photo} />
+                    <Route path="/contacts/:lastName" component={selectedContact} />
+                    <Route path="/contacts" component={Contacts} exact />
+                    <Route path="*" component={NotFound}></Route>
+                </Switch>
+            </Router>
+        </div>
+    );
 }
 
 export default App;

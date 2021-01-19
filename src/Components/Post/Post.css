@@ -1,0 +1,73 @@
+.posts {
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('https://www.osae.info/documentos_osae/2012/2012_03_18_m51.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.post {
+    background-color: #333376;
+    border: thin #808080bb solid;
+    width: 700px;
+    height: 430px;
+    padding: 10px;
+    font-size: 140%;
+    padding-bottom: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+.author {
+    display: flex;
+    height: 15%;
+    align-items: flex-start;
+}
+.author img {
+    border-radius: 100px;
+    max-height: 100px;
+    max-width: 100px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.author p {
+    margin: 10px 0 0 20px;
+}
+.name {
+    font-weight: bold;
+}
+.autor-information {
+    color: rgba(255, 255, 255, 0.631);
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-left: 100px;
+    text-align: left;
+}
+.content-text {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.content img {
+    width: 600px;
+    height: 350px;
+    margin-left: -30px;
+    margin-right: 20px;
+    border-radius: 30px;
+}
+.badges i {
+    padding: 3px;
+    font-size: 2rem;
+    transition: 0.4s;
+}
+.badges i:hover {
+    color: red;
+}
+i.fas {
+    color: red;
+}
