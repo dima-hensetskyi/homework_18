@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import Contact from './Contact';
-import './style.css';
 import { Link } from 'react-router-dom';
+
+import Contact from './Contact';
+
+import './style.css';
+
 export const contactsList = [
     {
         firstName: 'Барней',

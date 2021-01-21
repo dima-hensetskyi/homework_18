@@ -1,12 +1,14 @@
-import './App.css';
+import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom';
 import React from 'react';
+
+import Contacts, { contactsList } from './Components/Contacts/Contacts';
+import ContactDescription from './Components/Contacts/ContactDescription';
 import Main from './Components/Main/Main';
 import Posts from './Components/Post/Posts';
 import Photo from './Components/Photos/Photo';
 import NotFound from './Components/NotFound/NotFound';
-import Contacts, { contactsList } from './Components/Contacts/Contacts';
-import ContactDescription from './Components/Contacts/ContactDescription';
-import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-router-dom';
+
+import './App.css';
 
 const selectedContact = (props) => {
     const single = contactsList.find((contact) => contact.lastName === props.match.params.lastName);
@@ -17,8 +19,7 @@ const selectedContact = (props) => {
     );
 };
 
-function App() {
-    return (
+const App = () => 
         <div className="App">
             <Router>
                 <header className="App-header">
@@ -45,7 +46,5 @@ function App() {
                 </Switch>
             </Router>
         </div>
-    );
-}
 
 export default App;

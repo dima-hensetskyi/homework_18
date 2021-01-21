@@ -1,10 +1,11 @@
 import React from 'react';
-import './style.css';
+
 import male from './img/male.png';
 import female from './img/female.png';
 import neither from './img/neither.png';
 
-function Contact(props) {
+import './style.css';
+const Contact = (props) => {
     let gender;
     if (props.gender === 'male') {
         gender = male;
